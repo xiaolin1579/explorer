@@ -57,7 +57,6 @@ input.searchi {
   background-color: #293640 !important;
   border: 2px solid #384a58;
   color: #fff;
-  width: 100% !important;
 }
 
 input.searchimain {
@@ -65,13 +64,6 @@ input.searchimain {
   background-color: #293640 !important;
   border: 2px solid #384a58;
   color: #fff;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-    .searchimain {
-        width: 800px !important;
-    }
 }
 
 .boxi {

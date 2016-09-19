@@ -1,6 +1,6 @@
 //var cryptoSocket = require('crypto-socket');
 var BigNumber = require('bignumber.js');
-angular.module('ethExplorer')
+angular.module('urExplorer')
     .controller('mainCtrl', function ($rootScope, $scope, $location) {
 
         // Display & update block list
@@ -31,7 +31,7 @@ angular.module('ethExplorer')
 
                 var regexpTx = /[0-9a-zA-Z]{64}?/;
                 //var regexpAddr =  /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/; // TODO ADDR REGEX or use isAddress(hexString) API ?
-                var regexpAddr = /^(0x)?[0-9a-f]{40}$/; //New ETH Regular Expression for Addresses
+                var regexpAddr = /^(0x)?[0-9a-f]{40}$/; //New UR Regular Expression for Addresses
                 var regexpBlock = /[0-9]{1,7}?/;
 
                 var result =regexpTx.test(requestStr);
@@ -119,30 +119,32 @@ angular.module('ethExplorer')
                   if(blockBefore!==undefined){
                   $scope.blocktime = blockNewest.timestamp - blockBefore.timestamp;
                   }
-                  $scope.range1=100;
-                  range = $scope.range1;
-                  var blockPast = web3.eth.getBlock($scope.blockNum - range);
-                  if(blockBefore!==undefined){
-                  $scope.blocktimeAverage1 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
-                  }
-                  $scope.range2=1000;
-                  range = $scope.range2;
-                  var blockPast = web3.eth.getBlock($scope.blockNum - range);
-                  if(blockBefore!==undefined){
-                  $scope.blocktimeAverage2 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
-                  }
-                  $scope.range3=10000;
-                  range = $scope.range3;
-                  var blockPast = web3.eth.getBlock($scope.blockNum - range);
-                  if(blockBefore!==undefined){
-                  $scope.blocktimeAverage3 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
-                  }
-                  $scope.range4=100000;
-                  range = $scope.range4;
-                  var blockPast = web3.eth.getBlock($scope.blockNum - range);
-                  if(blockBefore!==undefined){
-                  $scope.blocktimeAverage4 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
-                  }
+
+                  // disabled due to network size
+                  // $scope.range1=100;
+                  // range = $scope.range1;
+                  // var blockPast = web3.eth.getBlock($scope.blockNum - range);
+                  // if(blockBefore!==undefined){
+                  // $scope.blocktimeAverage1 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
+                  // }
+                  // $scope.range2=1000;
+                  // range = $scope.range2;
+                  // var blockPast = web3.eth.getBlock($scope.blockNum - range);
+                  // if(blockBefore!==undefined){
+                  // $scope.blocktimeAverage2 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
+                  // }
+                  // $scope.range3=10000;
+                  // range = $scope.range3;
+                  // var blockPast = web3.eth.getBlock($scope.blockNum - range);
+                  // if(blockBefore!==undefined){
+                  // $scope.blocktimeAverage3 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
+                  // }
+                  // $scope.range4=100000;
+                  // range = $scope.range4;
+                  // var blockPast = web3.eth.getBlock($scope.blockNum - range);
+                  // if(blockBefore!==undefined){
+                  // $scope.blocktimeAverage4 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
+                  // }
 
                   range = $scope.blockNum;
                   var blockPast = web3.eth.getBlock(1);
@@ -189,7 +191,7 @@ angular.module('ethExplorer')
 
           $.getJSON("https://coinmarketcap-nexuist.rhcloud.com/api/eth/market_cap", function(json) {
             var cap = json.usd;
-            //console.log("Current ETH Market Cap: " + cap);
+            //console.log("Current UR Market Cap: " + cap);
             $scope.ethmarketcap = cap;
           });
         }
@@ -233,8 +235,8 @@ angular.module('filters', []).
   filter('diffFormat', function () {
     return function (diffi) {
       if (isNaN(diffi)) return diffi;
-      var n = diffi / 1000000000000;
-      return n.toFixed(3) + " T";
+      var n = diffi / 1000;
+      return n.toFixed(3) + " KH";
     };
   }).
   filter('stylize', function () {
@@ -255,7 +257,7 @@ angular.module('filters', []).
     return function (hashr) {
       if (isNaN(hashr)) return hashr;
       var n = hashr / 1000000000000;
-      return n.toFixed(3) + " TH/s";
+      return n.toFixed(3) + " KH/s";
     };
   }).
   filter('gasFormat', function () {
@@ -270,7 +272,7 @@ angular.module('filters', []).
       if (isNaN(txt)) return txt;
       var b = new BigNumber(txt);
       var w = web3.fromWei(b, "ether");
-      return w.toFixed(6) + " ETH";
+      return w.toFixed(6) + " UR";
     };
   }).
   filter('sizeFormat', function () {

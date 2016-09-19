@@ -10,7 +10,7 @@
 //    September 2015
 //
 
-angular.module('ethExplorer')
+angular.module('urExplorer')
     .controller('addressInfosCtrl', function ($rootScope, $scope, $location, $routeParams,$q) {
 
         $scope.init=function()

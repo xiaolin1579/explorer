@@ -8,19 +8,9 @@ The code in this branch is licensed under GPLv3 (see LICENSE file)
 
 Feel free to modify or reuse the code here.
 
-##Reddit
-
-Discuss this project at: [Reddit Page on /r/ethreum](https://www.reddit.com/r/ethereum/comments/511j5a/new_ethereum_block_explorer_heavily_updated/)
-
-##Donations
-
-ETH Address: 0xee298ae561bD7BE6e1040AFf281202E0b0646BA6
-
-BTC Address: 1AGxSzTPkthdNKfY5usVLwKDLk9i6sPTQj
-
 ##Installation
 
-`git clone https://github.com/carsenk/explorer`
+`git clone https://github.com/urcapital/explorer`
 
 `npm install`
 
@@ -28,9 +18,9 @@ BTC Address: 1AGxSzTPkthdNKfY5usVLwKDLk9i6sPTQj
 
 `npm start`
 
-Make sure to install geth as well for the ETH explorer to be able to function. Then run:
+Make sure to install gur as well for the UR explorer to be able to function. Then run:
 
-`geth --rpc --rpcaddr localhost --rpcport 8545 --rpcapi "web3,eth" --rpccorsdomain "http://localhost:8000"`
+`gur --rpc --rpcaddr localhost --rpcport 9595 --rpcapi "web3,eth" --rpccorsdomain "http://localhost:8000"`
 
 Then visit http://localhost:8000 in your browser of choice after you npm start the explorer
 
@@ -42,11 +32,11 @@ Then visit http://localhost:8000 in your browser of choice after you npm start t
 
 -You can easily change from a dark or light theme utilizing https://bootswatch.com
 
--There is a basic API implemented now as well as well as a Ethereum Blockchain Information page
+-There is a basic API implemented now as well as well as a UR Blockchain Information page
 
--Realtime ETH/USD Price Ticker
+-Realtime UR/USD Price Ticker
 
--Realtime Ethereum Hashrate
+-Realtime UR Hashrate
 
 -Address Pages are integrated with Shapeshift to easily send a payment to an address.
 

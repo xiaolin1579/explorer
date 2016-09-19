@@ -1,5 +1,5 @@
 var BigNumber = require('bignumber.js');
-angular.module('ethExplorer')
+angular.module('urExplorer')
     .controller('blockInfosCtrl', function ($rootScope, $scope, $location, $routeParams,$q) {
 
         $scope.init=function()

@@ -6,12 +6,12 @@
 var GETH_HOSTNAME	= "localhost";	// put your IP address!
 var APP_HOSTNAME 	= "See package.json --> scripts --> start: Change 'localhost'!!!";
 
-var GETH_RPCPORT  	= 8545; 		// for geth --rpcport GETH_RPCPORT
+var GETH_RPCPORT  	= 9595; 		// for geth --rpcport GETH_RPCPORT
 var APP_PORT 		= "See package.json --> scripts --> start: Perhaps change '8000'";
 
 // this is creating the corrected geth command
 var WL=window.location;
-var geth_command	= "geth --rpc --rpcaddr "+ GETH_HOSTNAME + " --rpcport " + GETH_RPCPORT +'\
+var gur_command	= "gur --rpc --rpcaddr "+ GETH_HOSTNAME + " --rpcport " + GETH_RPCPORT +'\
  --rpcapi "web3,eth" ' + ' --rpccorsdomain "' + WL.protocol +"//" + WL.host + '"';
 
 ////////////////////////////////////////////////////
@@ -20,7 +20,7 @@ var geth_command	= "geth --rpc --rpcaddr "+ GETH_HOSTNAME + " --rpcport " + GETH
 
 'use strict';
 
-angular.module('ethExplorer', ['ngRoute','ui.bootstrap','filters','ngSanitize'])
+angular.module('urExplorer', ['ngRoute','ui.bootstrap','filters','ngSanitize'])
 
 .config(['$routeProvider',
     function($routeProvider) {

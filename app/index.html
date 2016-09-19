@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="ethExplorer" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="ethExplorer" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="ethExplorer" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="ethExplorer" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="urExplorer" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="urExplorer" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="urExplorer" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="urExplorer" class="no-js"> <!--<![endif]-->
 <head>
   <base href="/">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Ethereum Block Explorer</title>
-  <meta name="description" content="An Ethereum (ETH) Block Explorer">
+  <title>UR Block Explorer</title>
+  <meta name="description" content="An UR (UR) Block Explorer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
@@ -24,14 +24,14 @@
             <span class="sr-only">Toggle navigation</span>
             <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="./#/">ETHER EXPLORER</a>
+        <a class="navbar-brand" href="./#/">UR EXPLORER</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li><a href="./#/">Home</a></li>
             <li><a href="./#/chain">Blockchain Info</a></li>
         </ul>
-        <div class="col-sm-3 col-md-3 pull-right">
+        <div class="col-sm-6 col-md-6 pull-right">
             <form class="navbar-form"  ng-controller="mainCtrl" ng-submit="processRequest()" name="search_form" role="search">
                 <div class="input-group">
                     <input type="text" placeholder="Tx Hash, Address, or Block #" name="requestType" required  ng-model="ethRequest"  class="form-control searchi">
@@ -65,14 +65,6 @@
   <script src="scripts/controllers/blockInfosController.js"></script>
   <script src="scripts/controllers/transactionInfosController.js"></script>
 <!--jQuery-->
-<script>
-function shapeshift_click(a,e) {
-  e.preventDefault();
-  var link=a.href;
-  window.open(link,'1418115287605','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=0,left=0,top=0');
-  return false;
-}
-</script>
 
   <!--Services-->
     <div id="connectwarning" class="modal fade" role="dialog">
@@ -96,14 +88,13 @@ function shapeshift_click(a,e) {
 
 <div class="footer styledfoot">
     <footer><br />
-            © ETHER EXPLORER 2016 | <a href="http://github.com/carsenk/explorer">Fork me on GitHub</a><br />
-            Helpful Links: ethereum.org | gdax.com | coinbase.com
+            © UR EXPLORER 2016 | <a href="https://github.com/urcapital/explorer">Fork me on GitHub</a>
             <br />
     </footer>
 </div>
 <script>
 //begin AltSheets
-$("#modaltext").text( geth_command );
+$("#modaltext").text( gur_command );
 // end AltSheets
 </script>
 </body>
