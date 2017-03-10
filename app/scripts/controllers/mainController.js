@@ -179,18 +179,18 @@ angular.module('urExplorer')
       }
 
         function getETHRates() {
-          $.getJSON("https://coinmarketcap-nexuist.rhcloud.com/api/eth/price", function(json) {
-            var price = json.usd;
+          $.getJSON("https://api.coinmarketcap.com/v1/ticker/ur/", function(json) {
+            var price = json.price_usd;
             $scope.ethprice = "$" + price.toFixed(2);
           });
 
-          $.getJSON("https://coinmarketcap-nexuist.rhcloud.com/api/eth/price", function(json) {
-            var btcprice = json.btc;
+          $.getJSON("https://api.coinmarketcap.com/v1/ticker/ur/", function(json) {
+            var btcprice = json.price_btc;
             $scope.ethbtcprice = btcprice;
           });
 
-          $.getJSON("https://coinmarketcap-nexuist.rhcloud.com/api/eth/market_cap", function(json) {
-            var cap = json.usd;
+          $.getJSON("https://api.coinmarketcap.com/v1/ticker/ur/", function(json) {
+            var cap = json.market_cap_usd;
             //console.log("Current UR Market Cap: " + cap);
             $scope.ethmarketcap = cap;
           });
